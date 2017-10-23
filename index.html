@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngDecipherIntlInput">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular ng-intl-input</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/intlTelInput.css">
+</head>
+<body>
+<div class="container">
+    <div class="row" style="margin-top: 50px">
+        <div class="col-md-12">
+            <h2>ng-decipher-intel-tel-input examples
+                <small>This wrapper is inherited from <a href="https://github.com/hodgepodgers/ng-intl-tel-input" target="_blank">hodgepodgers</a>.</small></h2>
+            <hr>
+            <p>ng-decipher-intl-input wrapper helps to use <a href="https://github.com/jackocnr/intl-tel-input" target="_blank">View Intl-input jquery plugin(A jQuery plugin for entering and validating international telephone numbers)</a> in ng-applications.</p>
+            <hr>
+            <h3>Basic Usage</h3>
+            <form name="basicEx">
+                <div class="form-group" ng-class="{'has-error': basicEx.mobile_number.$invalid && basicEx.mobile_number.$touched, '': basicEx.mobile_number.$valid}">
+                    <label class="control-label col-md-4" for="mobile_number">Mobile Number</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="mobile_number" name="mobile_number"
+                               ng-model="mobile_number" ng-intl-tel-input
+                               data-allowDropdown="true"
+                               data-autoHideDialCode="false"
+                               data-customPlaceholder="Enter mobile no"
+                               data-initialCountry=""
+                               data-nationalMode="false"
+                               data-separateDialCode="false"
+                               data-geoip="true"
+                               data-onlyCountries=""
+                               required>
+                        <span class="help-block"
+                              ng-show="basicEx.mobile_number.$invalid && basicEx.mobile_number.$touched">Please enter a valid mobile number!</span>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/angular_1_4_3.js"></script>
+<script src="assets/third-party/intl-input/intlTelInput.js"></script>
+<script src="assets/third-party/intl-input/utils.js"></script>
+<script src="assets/third-party/intl-input/ng-intl-tel-input_1.4.3.js"></script>
+<script>
+    var ngIntlTelInputApp = angular.module('ngDecipherIntlInput', ['ngIntlTelInput']);
+</script>
+</body>
+</html>
