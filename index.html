@@ -5,6 +5,8 @@
     <title>Angular ng-intl-input</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/intlTelInput.css">
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
 </head>
 <body>
 <div class="container">
@@ -23,7 +25,7 @@
                         <input type="text" class="form-control" id="mobile_number" name="mobile_number"
                                ng-model="mobile_number" ng-intl-tel-input
                                data-allowDropdown="true"
-                               data-autoHideDialCode="false"
+                               data-autoHideDialCode="true"
                                data-customPlaceholder="Enter mobile no"
                                data-initialCountry=""
                                data-nationalMode="false"
@@ -35,7 +37,87 @@
                               ng-show="basicEx.mobile_number.$invalid && basicEx.mobile_number.$touched">Please enter a valid mobile number!</span>
                     </div>
                 </div>
-
+                <br>
+                <br>
+                <pre >
+                    <code class="html nohighlight">
+                    &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;mobile_number&#x22; name=&#x22;mobile_number&#x22;
+                           ng-model=&#x22;mobile_number&#x22; ng-intl-tel-input
+                           data-allowDropdown=&#x22;true&#x22;
+                           data-autoHideDialCode=&#x22;false&#x22;
+                           data-customPlaceholder=&#x22;Enter mobile no&#x22;
+                           data-initialCountry=&#x22;&#x22;
+                           data-nationalMode=&#x22;false&#x22;
+                           data-separateDialCode=&#x22;false&#x22;
+                           data-geoip=&#x22;true&#x22;
+                           data-onlyCountries=&#x22;&#x22;
+                           required&#x3E;
+                    </code>
+                </pre>
+                <hr>
+                <h3>Methods to Use</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Method</td>
+                            <td>Value</td>
+                            <td>Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ng-intl-tel-input</td>
+                            <td>-</td>
+                            <td>This will initialize the intl-input plugins into the text box.</td>
+                        </tr>
+                        <tr>
+                            <td>data-allowDropdown</td>
+                            <td>true | false (by default true)</td>
+                            <td>Enables Dropdown of flags container</td>
+                        </tr>
+                        <tr>
+                            <td>data-autoHideDialCode</td>
+                            <td>true | false (by default true)</td>
+                            <td>if there is just a dial code in the input: remove it on blur, and re-add it on focus</td>
+                        </tr>
+                        <tr>
+                            <td>data-customPlaceholder</td>
+                            <td>string(Ex: Enter mobile no)</td>
+                            <td>Your custom string for textbox placeholder</td>
+                        </tr>
+                        <tr>
+                            <td>data-initialCountry</td>
+                            <td>string(Ex: in)</td>
+                            <td>country iso code to set the country as initial country</td>
+                        </tr>
+                        <tr>
+                            <td>data-nationalMode</td>
+                            <td>true | false (by default true)</td>
+                            <td>if you don't want to insert international dial codes, set this method value as true</td>
+                        </tr>
+                        <tr>
+                            <td>data-separateDialCode</td>
+                            <td>true | false (by default true)</td>
+                            <td>display the country dial code next to the selected flag so it's not part of the typed number</td>
+                        </tr>
+                        <tr>
+                            <td>data-geoip</td>
+                            <td>true | false (by default true)</td>
+                            <td>Fetching user country using ipinfo.io and set country as initial country</td>
+                        </tr>
+                        <tr>
+                            <td>data-onlyCountries</td>
+                            <td>string(Ex: us,gb)</td>
+                            <td>display only these countries, input must be Comma separated countries iso</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3>Credits</h3>
+                <ul class="">
+                    <li><a href="https://github.com/jackocnr/intl-tel-input"> Intl Input</a></li>
+                    <li><a href="https://github.com/hodgepodgers/ng-intl-tel-input"> hodgepodgers(Thanks for the basic!)</a></li>
+                </ul>
             </form>
         </div>
     </div>
@@ -46,8 +128,10 @@
 <script src="assets/third-party/intl-input/intlTelInput.js"></script>
 <script src="assets/third-party/intl-input/utils.js"></script>
 <script src="assets/third-party/intl-input/ng-intl-tel-input_1.4.3.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script>
     var ngIntlTelInputApp = angular.module('ngDecipherIntlInput', ['ngIntlTelInput']);
+    hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>

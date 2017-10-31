@@ -36,7 +36,7 @@ angular.module('ngIntlTelInput')
                         $log.warn('ng-intl-tel-input can only be applied to a *text* or *tel* input');
                         return;
                     }
-                    console.log("Attributes=> ",attr.geoip)
+                    // console.log("Attributes=> ",attr.geoip)
                     if (attr.onlyCountry) {
                         ngIntlTelInput.set({onlyCountries: [attr.onlyCountry]});
                     }
@@ -69,11 +69,8 @@ angular.module('ngIntlTelInput')
                             $http.get('https://ipinfo.io')
                             .then(function(response) {
                                 country_code = response.data.country;
+                                elm.intlTelInput('setCountry',country_code)
                             });
-                        setTimeout(function () {
-                            console.log(country_code)
-                            ngIntlTelInput.set({geoIpLookup: country_code});
-                        },1000)
                     }
                     // Initialize.
                     ngIntlTelInput.init(elm);
