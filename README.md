@@ -59,6 +59,6 @@ This attribute applies _intl-tel-input_ to a **text** or **tel** field.
 | data-onlyCountries | string(Ex: us,gb) | display only these countries, input must be Comma separated countries iso |
 
 
-###Credits
+## Credits
 * Intl Input[https://github.com/jackocnr/intl-tel-input]
 * hodgepodgers[https://github.com/hodgepodgers/ng-intl-tel-input]
