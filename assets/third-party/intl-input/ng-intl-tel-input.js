@@ -1,3 +1,7 @@
+**
+ * Created by Decipher on 01-11-2017.
+ * mailtodecipher@gmail.com
+ */
 angular.module('ngIntlTelInput', []);angular.module('ngIntlTelInput')
     .provider('ngIntlTelInput', function () {
         var me = this;
@@ -45,9 +49,6 @@ angular.module('ngIntlTelInput')
                     }
                     if (attr.autohidedialcode != '') {
                         ngIntlTelInput.set({autoHideDialCode: attr.autohidedialcode});
-                    }
-                    if (attr.customplaceholder != '') {
-                        ngIntlTelInput.set({customPlaceholder: attr.customplaceholder});
                     }
                     if (attr.initialcountry != '') {
                         ngIntlTelInput.set({initialCountry: attr.initialcountry});
