@@ -1,1 +1,3 @@
-assets/css/*,assets/img/*,*.html, linguist-vendored
+assets/css/* linguist-vendored
+assets/img/* linguist-vendored
+*.html linguist-vendored
